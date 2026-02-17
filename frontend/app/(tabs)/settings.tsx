@@ -86,8 +86,8 @@ export default function SettingsScreen() {
             { backgroundColor: c.card, borderColor: c.cardBorder },
           ]}
         >
-          <Link href="/(tabs)/locations" asChild>
-            <Pressable style={[styles.row, styles.rowBorder, { borderColor: c.cardBorder }]}>
+          <Link href="/(tabs)/locations" asChild style={[styles.row, styles.rowBorder, { borderColor: c.cardBorder }]}>
+            <Pressable>
               <MaterialCommunityIcons name="map-marker" size={22} color={c.tint} />
               <Text style={[styles.rowLabel, { color: c.text }]}>Default location</Text>
               <MaterialCommunityIcons name="chevron-right" size={22} color={c.textSecondary} />
