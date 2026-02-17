@@ -1,11 +1,13 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useTheme } from '@/context/ThemeContext';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { Colors } from '@/constants/theme';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function SettingsScreen() {
   const colorScheme = useColorScheme();
+  const theme = useTheme();
   const insets = useSafeAreaInsets();
   const c = Colors[colorScheme ?? 'light'];
 
@@ -48,6 +50,28 @@ export default function SettingsScreen() {
             <MaterialCommunityIcons name="ruler" size={22} color={c.tint} />
             <Text style={[styles.rowLabel, { color: c.text }]}>Pressure</Text>
             <Text style={[styles.rowValue, { color: c.textSecondary }]}>mb</Text>
+          </View>
+        </View>
+
+        {/* Appearance */}
+        <Text style={[styles.sectionTitle, { color: c.textSecondary }]}>
+          Appearance
+        </Text>
+        <View
+          style={[
+            styles.card,
+            { backgroundColor: c.card, borderColor: c.cardBorder },
+          ]}
+        >
+          <View style={[styles.row, styles.rowBorder, { borderColor: c.cardBorder }]}>
+            <MaterialCommunityIcons name="theme-light-dark" size={22} color={c.tint} />
+            <Text style={[styles.rowLabel, { color: c.text }]}>Dark mode</Text>
+            <Switch
+              value={colorScheme === 'dark'}
+              onValueChange={(value) => theme?.setPreference(value ? 'dark' : 'light')}
+              trackColor={{ false: c.cardBorder, true: c.tint }}
+              thumbColor="#fff"
+            />
           </View>
         </View>
 
