@@ -31,6 +31,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="locations"
+        options={{
+          title: 'Locations',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="location.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',

@@ -1,8 +1,9 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Link } from 'expo-router';
 import { useTheme } from '@/context/ThemeContext';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { Colors } from '@/constants/theme';
-import { ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function SettingsScreen() {
@@ -85,11 +86,13 @@ export default function SettingsScreen() {
             { backgroundColor: c.card, borderColor: c.cardBorder },
           ]}
         >
-          <View style={[styles.row, styles.rowBorder, { borderColor: c.cardBorder }]}>
-            <MaterialCommunityIcons name="map-marker" size={22} color={c.tint} />
-            <Text style={[styles.rowLabel, { color: c.text }]}>Default location</Text>
-            <MaterialCommunityIcons name="chevron-right" size={22} color={c.textSecondary} />
-          </View>
+          <Link href="/(tabs)/locations" asChild>
+            <Pressable style={[styles.row, styles.rowBorder, { borderColor: c.cardBorder }]}>
+              <MaterialCommunityIcons name="map-marker" size={22} color={c.tint} />
+              <Text style={[styles.rowLabel, { color: c.text }]}>Default location</Text>
+              <MaterialCommunityIcons name="chevron-right" size={22} color={c.textSecondary} />
+            </Pressable>
+          </Link>
           <View style={styles.row}>
             <MaterialCommunityIcons name="bell-outline" size={22} color={c.tint} />
             <Text style={[styles.rowLabel, { color: c.text }]}>Notifications</Text>
