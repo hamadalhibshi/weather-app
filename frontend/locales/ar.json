@@ -1,0 +1,98 @@
+{
+  "tabs": {
+    "weather": "الطقس",
+    "forecast": "التوقعات",
+    "locations": "المواقع",
+    "settings": "الإعدادات"
+  },
+  "common": {
+    "feelsLike": "الإحساس",
+    "high": "ع",
+    "low": "و",
+    "now": "الآن",
+    "current": "الحالي",
+    "kmh": "كم/ساعة"
+  },
+  "sections": {
+    "hourlyForecast": "توقعات كل ساعة",
+    "sevenDayForecast": "توقعات 7 أيام"
+  },
+  "stats": {
+    "humidity": "الرطوبة",
+    "wind": "الرياح"
+  },
+  "days": {
+    "today": "اليوم",
+    "wed": "الأربعاء",
+    "thu": "الخميس",
+    "fri": "الجمعة",
+    "sat": "السبت",
+    "sun": "الأحد"
+  },
+  "conditions": {
+    "partlyCloudy": "غائم جزئياً",
+    "sunny": "مشمس",
+    "cloudy": "غائم",
+    "night": "صافي",
+    "nightPartlyCloudy": "غائم جزئياً"
+  },
+  "modal": {
+    "title": "هذه نافذة منبثقة",
+    "goHome": "العودة للرئيسية"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "subtitle": "خصص تجربة الطقس",
+    "units": "الوحدات",
+    "temperature": "درجة الحرارة",
+    "celsius": "سيليزيوس",
+    "windSpeed": "سرعة الرياح",
+    "kmh": "كم/ساعة",
+    "mb": "ميليبار",
+    "pressure": "الضغط",
+    "appearance": "المظهر",
+    "darkMode": "الوضع الداكن",
+    "preferences": "التفضيلات",
+    "defaultLocation": "الموقع الافتراضي",
+    "notifications": "الإشعارات",
+    "about": "حول",
+    "version": "الإصدار",
+    "privacyPolicy": "سياسة الخصوصية",
+    "language": "اللغة",
+    "languageValue": "العربية"
+  },
+  "forecast": {
+    "title": "توقعات 7 أيام",
+    "subtitle": "سان فرانسيسكو، كاليفورنيا"
+  },
+  "locations": {
+    "title": "المواقع",
+    "subtitle": "إدارة المواقع المحفوظة للطقس",
+    "addLocation": "إضافة موقع"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "العربية"
+  },
+  "utils": {
+    "days": {
+      "today": "اليوم",
+      "sunday": "الأحد",
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت"
+    },
+    "conditions": {
+      "partlyCloudy": "غائم جزئياً",
+      "sunny": "مشمس",
+      "cloudy": "غائم",
+      "night": "صافي",
+      "nightPartlyCloudy": "غائم جزئياً",
+      "clear": "صافي",
+      "rain": "مطر"
+    }
+  }
+}

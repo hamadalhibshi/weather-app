@@ -3,72 +3,9 @@ import { useColorScheme } from "@/hooks/use-color-scheme";
 import { Colors } from "@/constants/theme";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-
-const FORECAST = [
-  {
-    day: "Today",
-    date: "Feb 17",
-    high: 24,
-    low: 16,
-    icon: "weather-partly-cloudy" as const,
-    condition: "Partly cloudy",
-    precip: 10,
-  },
-  {
-    day: "Wednesday",
-    date: "Feb 18",
-    high: 26,
-    low: 15,
-    icon: "weather-sunny" as const,
-    condition: "Sunny",
-    precip: 0,
-  },
-  {
-    day: "Thursday",
-    date: "Feb 19",
-    high: 23,
-    low: 14,
-    icon: "weather-cloudy" as const,
-    condition: "Cloudy",
-    precip: 60,
-  },
-  {
-    day: "Friday",
-    date: "Feb 20",
-    high: 25,
-    low: 16,
-    icon: "weather-partly-cloudy" as const,
-    condition: "Partly cloudy",
-    precip: 20,
-  },
-  {
-    day: "Saturday",
-    date: "Feb 21",
-    high: 27,
-    low: 17,
-    icon: "weather-sunny" as const,
-    condition: "Sunny",
-    precip: 0,
-  },
-  {
-    day: "Sunday",
-    date: "Feb 22",
-    high: 24,
-    low: 15,
-    icon: "weather-partly-cloudy" as const,
-    condition: "Partly cloudy",
-    precip: 30,
-  },
-  {
-    day: "Monday",
-    date: "Feb 23",
-    high: 22,
-    low: 14,
-    icon: "weather-rainy" as const,
-    condition: "Rain",
-    precip: 80,
-  },
-];
+import { useTranslation } from "react-i18next";
+import { FORECAST } from "@/constants/fakeData";
+import { getConditionTranslation, getDayTranslation } from "@/utils/strings";
 
 function WeatherIcon({
   name,
@@ -92,9 +29,9 @@ function WeatherIcon({
 }
 
 export default function ForecastScreen() {
+  const { t } = useTranslation();
   const colorScheme = useColorScheme();
   const insets = useSafeAreaInsets();
-  const isDark = colorScheme === "dark";
   const c = Colors[colorScheme ?? "light"];
 
   return (
@@ -107,7 +44,9 @@ export default function ForecastScreen() {
         ]}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={[styles.title, { color: c.text }]}>7-Day Forecast</Text>
+        <Text style={[styles.title, { color: c.text }]}>
+          {t("forecast.title")}
+        </Text>
         <Text style={[styles.subtitle, { color: c.textSecondary }]}>
           San Francisco, CA
         </Text>
@@ -127,7 +66,7 @@ export default function ForecastScreen() {
               <View style={styles.cardTop}>
                 <View style={styles.cardLeft}>
                   <Text style={[styles.dayName, { color: c.text }]}>
-                    {day.day}
+                    {getDayTranslation(day.day.toLowerCase(), t)}
                   </Text>
                   <Text style={[styles.date, { color: c.textSecondary }]}>
                     {day.date}
@@ -142,7 +81,7 @@ export default function ForecastScreen() {
                     style={styles.cardIcon}
                   />
                   <Text style={[styles.condition, { color: c.textSecondary }]}>
-                    {day.condition}
+                    {getConditionTranslation(day.condition.toLowerCase(), t)}
                   </Text>
                 </View>
 
@@ -190,11 +129,13 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: -0.5,
     marginBottom: 4,
+    alignSelf: "flex-start",
   },
   subtitle: {
     fontSize: 15,
     fontWeight: "500",
     marginBottom: 24,
+    alignSelf: "flex-start",
   },
   list: {
     gap: 12,
@@ -216,10 +157,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
     marginBottom: 2,
+    alignSelf: "flex-start",
   },
   date: {
     fontSize: 13,
     fontWeight: "500",
+    alignSelf: "flex-start",
   },
   cardCenter: {
     alignItems: "center",

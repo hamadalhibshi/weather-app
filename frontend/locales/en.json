@@ -1,0 +1,98 @@
+{
+  "tabs": {
+    "weather": "Weather",
+    "forecast": "Forecast",
+    "locations": "Locations",
+    "settings": "Settings"
+  },
+  "common": {
+    "feelsLike": "Feels like",
+    "high": "H",
+    "low": "L",
+    "now": "Now",
+    "current": "Current",
+    "kmh": "km/h"
+  },
+  "sections": {
+    "hourlyForecast": "Hourly forecast",
+    "sevenDayForecast": "7-day forecast"
+  },
+  "stats": {
+    "humidity": "Humidity",
+    "wind": "Wind"
+  },
+  "days": {
+    "today": "Today",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "conditions": {
+    "partlyCloudy": "Partly cloudy",
+    "sunny": "Sunny",
+    "cloudy": "Cloudy",
+    "night": "Clear",
+    "nightPartlyCloudy": "Partly cloudy"
+  },
+  "modal": {
+    "title": "This is a modal",
+    "goHome": "Go to home screen"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Customize your weather experience",
+    "units": "Units",
+    "temperature": "Temperature",
+    "celsius": "Celsius",
+    "kmh": "km/h",
+    "mb": "mb",
+    "windSpeed": "Wind speed",
+    "pressure": "Pressure",
+    "appearance": "Appearance",
+    "darkMode": "Dark mode",
+    "preferences": "Preferences",
+    "defaultLocation": "Default location",
+    "notifications": "Notifications",
+    "about": "About",
+    "version": "Version",
+    "privacyPolicy": "Privacy policy",
+    "language": "Language",
+    "languageValue": "English"
+  },
+  "forecast": {
+    "title": "7-Day Forecast",
+    "subtitle": "San Francisco, CA"
+  },
+  "locations": {
+    "title": "Locations",
+    "subtitle": "Manage your saved locations for weather",
+    "addLocation": "Add location"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "العربية"
+  },
+  "utils": {
+    "days": {
+      "today": "Today",
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+    "conditions": {
+      "partlyCloudy": "Partly cloudy",
+      "sunny": "Sunny",
+      "cloudy": "Cloudy",
+      "night": "Clear",
+      "nightPartlyCloudy": "Partly cloudy",
+      "clear": "Clear",
+      "rain": "Rain"
+    }
+  }
+}
