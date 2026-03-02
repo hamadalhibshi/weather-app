@@ -1,15 +1,21 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
-import { useColorScheme as useRNColorScheme } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { useColorScheme as useRNColorScheme } from "react-native";
 
-const THEME_KEY = '@weather_app_theme';
+const THEME_KEY = "@weather_app_theme";
 
-type ThemePreference = 'light' | 'dark' | null;
+type ThemePreference = "light" | "dark" | null;
 
 type ThemeContextValue = {
-  colorScheme: 'light' | 'dark';
+  colorScheme: "light" | "dark";
   preference: ThemePreference;
-  setPreference: (value: 'light' | 'dark') => void;
+  setPreference: (value: "light" | "dark") => void;
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
@@ -20,18 +26,20 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     AsyncStorage.getItem(THEME_KEY).then((value: string | null) => {
-      if (value === 'light' || value === 'dark') {
+      if (value === "light" || value === "dark") {
         setPreferenceState(value);
       }
     });
   }, []);
 
-  const setPreference = useCallback((value: 'light' | 'dark') => {
+  const setPreference = useCallback((value: "light" | "dark") => {
     setPreferenceState(value);
     AsyncStorage.setItem(THEME_KEY, value);
   }, []);
 
-  const colorScheme = (preference ?? systemScheme ?? 'light') as 'light' | 'dark';
+  const colorScheme = (preference ?? systemScheme ?? "light") as
+    | "light"
+    | "dark";
 
   const value: ThemeContextValue = {
     colorScheme,
@@ -40,9 +48,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 
