@@ -8,6 +8,7 @@ import { useLanguage } from "@/hooks/use-language";
 import { useTranslation } from "react-i18next";
 import { SAVED_LOCATIONS } from "@/constants/fakeData";
 import { getConditionTranslation } from "@/utils/strings";
+import { router } from "expo-router";
 
 export default function LocationsScreen() {
   const { t } = useTranslation();
@@ -15,6 +16,10 @@ export default function LocationsScreen() {
   const colorScheme = useColorScheme();
   const insets = useSafeAreaInsets();
   const c = Colors[colorScheme ?? "light"];
+
+  const handleAddLocation = () => {
+    router.push("/screens/add-location");
+  };
 
   return (
     <View style={[styles.container, { backgroundColor: c.background }]}>
@@ -92,6 +97,7 @@ export default function LocationsScreen() {
         </View>
 
         <Pressable
+          onPress={handleAddLocation}
           style={({ pressed }) => [
             styles.addCard,
             {

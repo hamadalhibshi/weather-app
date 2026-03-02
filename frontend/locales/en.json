@@ -13,6 +13,9 @@
     "current": "Current",
     "kmh": "km/h"
   },
+  "titles": {
+    "addLocation": "Add Location"
+  },
   "sections": {
     "hourlyForecast": "Hourly forecast",
     "sevenDayForecast": "7-day forecast"
@@ -68,11 +71,55 @@
   "locations": {
     "title": "Locations",
     "subtitle": "Manage your saved locations for weather",
-    "addLocation": "Add location"
+    "addLocation": "Add location",
+    "addNewLocation": "Added new location",
+    "pickHint": "Move the map or tap to choose a location",
+    "useThisLocation": "Use location",
+    "myLocation": "My location",
+    "locationSaved": "Location saved successfully.",
+    "ok": "OK"
   },
   "languages": {
     "en": "English",
     "ar": "العربية"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "lastUpdatedDate": "March 2025",
+    "intro": "We respect your privacy. This policy describes how we collect, use, and protect your information when you use our weather app.",
+    "dataCollection": {
+      "title": "Information We Collect",
+      "location": "Location data: We use your device location to show weather for your area. You can disable this in your device settings.",
+      "usage": "Usage data: We may collect anonymous usage statistics to improve the app (e.g., which features you use)."
+    },
+    "dataUse": {
+      "title": "How We Use Your Data",
+      "content": "We use your data only to provide weather forecasts, save your preferred locations, and improve the app experience. We do not sell your personal information."
+    },
+    "dataSharing": {
+      "title": "Sharing Your Data",
+      "content": "We may share anonymized or aggregated data with weather data providers. We do not share personally identifiable information with third parties for marketing."
+    },
+    "security": {
+      "title": "Security",
+      "content": "We take reasonable measures to protect your data. Location and preferences are stored on your device; we do not store your location history on our servers."
+    },
+    "yourRights": {
+      "title": "Your Rights",
+      "content": "You can delete saved locations and clear app data at any time. If you have questions about your data, contact us using the details below."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "For privacy-related questions or requests, please contact us at privacy@weatherapp.example.com."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Manage weather alerts and notification preferences",
+    "enableLabel": "Enable notifications",
+    "description": "Receive alerts for severe weather, rain, and daily forecasts for your saved locations.",
+    "disableButton": "Disable notifications"
   },
   "utils": {
     "days": {

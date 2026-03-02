@@ -1,5 +1,5 @@
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { Link } from "expo-router";
+import { router } from "expo-router";
 import { useTheme } from "@/context/ThemeContext";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { Colors } from "@/constants/theme";
@@ -17,6 +17,14 @@ export default function SettingsScreen() {
   const c = Colors[colorScheme ?? "light"];
   const currentLang = i18n.language?.startsWith("ar") ? "ar" : "en";
   const { isRTL, changeLanguage } = useLanguage();
+
+  const handlePrivacyPolicyPress = () => {
+    router.push("/screens/privacy-policy");
+  };
+
+  const handleNotificationsPress = () => {
+    router.push("/screens/notifications");
+  };
 
   return (
     <View style={[styles.container, { backgroundColor: c.background }]}>
@@ -178,35 +186,7 @@ export default function SettingsScreen() {
             { backgroundColor: c.card, borderColor: c.cardBorder },
           ]}
         >
-          <Link
-            href="/(tabs)/locations"
-            asChild
-            style={[
-              styles.row,
-              styles.rowBorder,
-              { borderColor: c.cardBorder },
-            ]}
-          >
-            <Pressable>
-              <View style={styles.innerRow}>
-                <MaterialCommunityIcons
-                  name="map-marker"
-                  size={22}
-                  color={c.tint}
-                />
-                <Text style={[styles.rowLabel, { color: c.text }]}>
-                  {t("settings.defaultLocation")}
-                </Text>
-              </View>
-              <MaterialCommunityIcons
-                name={isRTL ? "chevron-left" : "chevron-right"}
-                size={22}
-                color={c.textSecondary}
-              />
-            </Pressable>
-          </Link>
-
-          <View style={styles.row}>
+          <Pressable style={styles.row} onPress={handleNotificationsPress}>
             <View style={styles.innerRow}>
               <MaterialCommunityIcons
                 name="bell-outline"
@@ -222,7 +202,7 @@ export default function SettingsScreen() {
               size={22}
               color={c.textSecondary}
             />
-          </View>
+          </Pressable>
         </View>
 
         {/* About */}
@@ -257,7 +237,7 @@ export default function SettingsScreen() {
             </Text>
           </View>
 
-          <View style={styles.row}>
+          <Pressable style={styles.row} onPress={handlePrivacyPolicyPress}>
             <View style={styles.innerRow}>
               <MaterialCommunityIcons
                 name="file-document-outline"
@@ -273,7 +253,7 @@ export default function SettingsScreen() {
               size={22}
               color={c.textSecondary}
             />
-          </View>
+          </Pressable>
         </View>
       </ScrollView>
     </View>

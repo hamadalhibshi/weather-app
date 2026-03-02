@@ -1,3 +1,4 @@
+import React from "react";
 import "@/i18n";
 import {
   DarkTheme,
@@ -11,6 +12,7 @@ import "react-native-reanimated";
 import { ThemeProvider as AppThemeProvider } from "@/context/ThemeContext";
 import { RTLProvider } from "@/context/RTLContext";
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { useLanguage } from "@/hooks/use-language";
 
 export const unstable_settings = {
   anchor: "(tabs)",
@@ -18,11 +20,17 @@ export const unstable_settings = {
 
 function RootLayoutContent() {
   const colorScheme = useColorScheme();
+  const { isRTL } = useLanguage();
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack
+        screenOptions={{
+          animation: isRTL ? "slide_from_left" : "slide_from_right",
+        }}
+      >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="screens" options={{ headerShown: false }} />
         <Stack.Screen
           name="modal"
           options={{ presentation: "modal", title: "Modal" }}
