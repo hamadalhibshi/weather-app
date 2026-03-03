@@ -18,7 +18,7 @@ export default function ScreensLayout() {
   }, [router]);
 
   const backButton = (
-    <Pressable onPress={handleBack} hitSlop={8} style={{ padding: 8 }}>
+    <Pressable onPress={handleBack} style={{ paddingHorizontal: 8 }}>
       <MaterialCommunityIcons
         name={isRTL ? "chevron-right" : "chevron-left"}
         size={28}
